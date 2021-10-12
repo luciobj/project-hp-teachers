@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+Esse é um projeto para o conteúdo sobre `Context API`.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Antes de iniciar
 
-## Available Scripts
+Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
 
-In the project directory, you can run:
+Após feito o fork, clone o repositório criado para o seu computador.
 
-### `npm start`
+Rode o `npm install`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Vá para a branch master do seu projeto e execute o comando:
+- `git branch`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Verifique se as seguintes branchs apareceram:
 
-### `npm test`
+  `exercise-one`
+  `exercise-two`
+  `exercise-three`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Cada branch dessas será um exercício.
+- Mude para a branch `exercise-one` com o comando `git checkout exercise-one`. É nessa branch que você realizará a solução para o exercício 1, e assim por diante.
 
-### `npm run build`
+Observe o que deve ser feito nas instruções para cada exercício.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Após a solução dos exercícios, abra um PR no seu repositório forkado e, se quiser, mergeie para a master, sinta-se a vontade!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Atenção!** Quando for criar o PR você irá se deparar com essa tela:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![PR do exercício](images/example-pr.png)
 
-### `npm run eject`
+É necessário realizar uma mudança. Clique no *base repository* como na imagem abaixo:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Mudando a base do repositório](images/change-base.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Mude para o seu repositório. Seu nome estará na frente do nome dele, por exemplo: `antonio/TicTacToe`. Depois desse passo a página deve ficar assim:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Após mudança](images/after-change.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Agora basta criar o PULL REQUEST clicando no botão `Create Pull Request`.
 
-## Learn More
+Para cada PR realize esse processo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### COMEÇANDO OS EXERCÍCIOS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Nossa aplicação mostra os nomes de todos os professores e membros de escolas de magia até os eventos do quinto livro do universo de Harry Potter! Porem, não há nenhuma distinção entre aqueles atualmente em serviço, ou até mesmo os diretores, estão simplesmente todos juntos em uma lista.
+Além disso, quando observamos o código, verficamos um clássico cenário de _prop drilling_, onde a informação passa por diversos componentes para só ao final ser utilizada.
+Para corrigir essa situação, realize os exercicios e aplique seus conhecimentos em _Context API_!
 
-### Code Splitting
+#### Exercício 1
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Aplique o _Context API_ para que a informação não precise passar por todos os componentes.
 
-### Analyzing the Bundle Size
+#### Exercício 2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Agora que você tem sua informação no estado global, faça um card distinto para diretores, onde cada um deverá ter o nome, imagem, e magia assinatura.
 
-### Making a Progressive Web App
+#### Exercício 3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Faça com que os professores tenham seu nome, imagem, e matéria ensinada em seus cards.
 
-### Advanced Configuration
+### Exercício 4
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+No componente Staff, separe os professores entre aqueles ativamente ensinando, e aqueles que não estão mais em hogwarts.
