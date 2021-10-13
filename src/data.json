@@ -50,7 +50,7 @@
     "headmasterOrMistress": false,
     "actor": "Alan Rickman",
     "alternate_actors": [""],
-    "alive": false,
+    "alive": true,
     "image": "http://hp-api.herokuapp.com/images/snape.jpg"
   },
   {
@@ -213,7 +213,7 @@
     "signatureSpell": "Apparate",
     "actor": "Richard Harris",
     "alternate_actors": ["Michael Gambon"],
-    "alive": false,
+    "alive": true,
     "image": "https://static.wikia.nocookie.net/harrypotter/images/4/40/Albus_Dumbledore_%28HBP_promo%29_3.jpg/revision/latest/scale-to-width-down/1000?cb=20150822232849"
   },
   {
@@ -357,7 +357,7 @@
     "species": "human",
     "gender": "female",
     "house": "",
-    "subject": "",
+    "subject": "Flying and Quidditch referee",
     "dateOfBirth": "",
     "yearOfBirth": "",
     "wizard": true,
@@ -371,7 +371,7 @@
     },
     "patronus": "",
     "schoolafiliation": "Hogwarts",
-    "currentlyEmployed": false,
+    "currentlyEmployed": true,
     "headmasterOrMistress": false,
     "actor": "Zoë Wanamaker",
     "alternate_actors": [],
@@ -479,7 +479,7 @@
     },
     "patronus": "",
     "schoolafiliation": "Hogwarts",
-    "currentlyEmployed": false,
+    "currentlyEmployed": true,
     "headmasterOrMistress": false,
     "actor": "",
     "alternate_actors": [],
@@ -533,7 +533,7 @@
     },
     "patronus": "",
     "schoolafiliation": "Hogwarts",
-    "currentlyEmployed": false,
+    "currentlyEmployed": true,
     "headmasterOrMistress": false,
     "actor": "Apple Brook",
     "alternate_actors": [],
