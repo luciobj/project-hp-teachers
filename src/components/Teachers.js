@@ -8,14 +8,18 @@ function Teachers(props) {
     <div>
       <div className="teacher-container">
         <h5>Active Teachers</h5>
-        { activeTeachers.map((teacher) => (
-          <ProfessorCard key={ teacher.name } teacher={ teacher } />
+        { activeTeachers
+          .sort((caracter, nextCaracter) => caracter.name > nextCaracter.name)
+            .map((teacher) => (
+              <ProfessorCard key={ teacher.name } teacher={ teacher } />
         )) }
       </div>
       <div className="teacher-container">
         <h5>Other Teachers</h5>
-        { otherTeachers.map((teacher) => (
-          <ProfessorCard key={ teacher.name } teacher={ teacher } />
+        { otherTeachers
+          .sort((caracter, nextCaracter) => caracter.name > nextCaracter.name)
+            .map((teacher) => (
+              <ProfessorCard key={ teacher.name } teacher={ teacher } />
         )) }
       </div>
     </div>
