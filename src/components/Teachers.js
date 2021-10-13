@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import ProfessorCard from './ProfessorCard';
 
-function Hogwarts(props) {
+function Teachers(props) {
   const { data } = props;
   return (
     <div>
@@ -13,8 +13,8 @@ function Hogwarts(props) {
   );
 }
 
-export default Hogwarts;
+export default Teachers;
 
-Hogwarts.propTypes = {
+Teachers.propTypes = {
   data: PropTypes.objectOf().isRequired,
 }
