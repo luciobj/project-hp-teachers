@@ -9,7 +9,6 @@ import Beauxbatons from './components/Beauxbatons';
 function App() {
   return (
     <div className="app">
-      <img src={ crests } alt="Schools Crests" className="image"/>
       <header>
         <h1 className="main-title">Professors and staff members of the Wizarding Schools</h1>
       </header>
