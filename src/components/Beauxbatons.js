@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import ProfessorCard from './ProfessorCard';
+import { context } from "../App";
+import Headmastermistress from './Headmastermistress';
 
-function Beauxbatons(props) {
-  const { data } = props;
+function Beauxbatons() {
   return (
-    <div>
-      <h2 className="title">Beauxbatons Academy of Magic</h2>
-      { data.filter((caracter) => caracter.schoolafiliation === "Beauxbatons Academy of Magic").map((professor) => 
-      <ProfessorCard data={ professor } />
-      ) }
-    </div>
+    <context.Consumer>
+      { (({ Beauxbatons }) => {
+        <div>
+          <h2 className="title">Beauxbatons Academy of Magic</h2>
+          <Headmastermistress caracter={ Beauxbatons } />
+        </div>
+      }) }
+    </context.Consumer>
   );
 }
 

@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import ProfessorCard from './ProfessorCard';
+import { context } from "../App";
+import Headmastermistress from './Headmastermistress';
 
-function Durmstrang(props) {
-  const { data } = props;
+function Durmstrang() {
   return (
-    <div>
-      <h2 className="title">Durmstrang Institute</h2>
-      { data.filter((caracter) => caracter.schoolafiliation === "Durmstrang Institute").map((professor) => 
-      <ProfessorCard data={ professor } />
-      ) }
-    </div>
+    <context.Consumer>
+      { (({ Durmstrang }) => {
+        <div>
+          <h2 className="title">Durmstrang Institute</h2>
+          <Headmastermistress caracter={ Durmstrang } />
+        </div>
+      }) }
+    </context.Consumer>
   );
 }
 

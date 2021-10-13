@@ -1,14 +1,27 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import Teachers from './Teachers.js';
+import { context } from "../App";
+import Headmastermistress from './Headmastermistress';
 
-function Hogwarts(props) {
-  const { data } = props;
+function Hogwarts() {
   return (
-    <div>
-      <h2 className="title">Hogwarts School of Witchcrat</h2>
-      <Teachers data={ data } />
-    </div>
+    <context.Consumer>
+      { (({ Hogwarts:{ Headmaster, activeTeachers, otherTeachers } }) => {
+        <div>
+          <h2 className="title">Hogwarts School of Witchcrat</h2>
+          <Headmastermistress caracter={ Headmaster } />
+          <div>
+            <h5>Active Teachers</h5>
+            <Teachers data={ activeTeachers } />
+          </div>
+          <div>
+            <h5>Other Teachers</h5>
+            <Teachers data={ otherTeachers } />
+          </div>
+        </div>
+      }) }
+    </context.Consumer>
   );
 }
 

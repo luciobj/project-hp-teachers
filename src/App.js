@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, createContext } from 'react';
 import './App.css';
 import crests from './images/crests.jpg'
 import data from './data.json';
@@ -6,17 +6,54 @@ import Hogwarts from './components/Hogwarts';
 import Durmstrang from './components/Durmstrang';
 import Beauxbatons from './components/Beauxbatons';
 
-function App() {
-  return (
-    <div className="app">
-      <header>
-        <h1 className="main-title">Professors and staff members of the Wizarding Schools</h1>
-      </header>
-      <Durmstrang data={ data } />
-      <Beauxbatons data={ data } />
-      <Hogwarts data={ data } />
-    </div>
-  );
+export const context = createContext();
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      filtered: [],
+    };
+  }
+
+  render() {
+    const { filtered } = this.state;
+    const BeauxbatonsPeople = data.filter((caracter) => caracter
+      .schoolafiliation === "Beauxbatons Academy of Magic");
+    const DurmstrangPeople = data.filter((caracter) => caracter
+      .schoolafiliation === "Durmstrang Institute");
+    const HogwartsPeople = data.filter((caracter) => caracter
+      .schoolafiliation === "Hogwarts");
+    const contextValue = {
+      Durmstrang: DurmstrangPeople,
+      Beauxbatons: BeauxbatonsPeople,
+      Hogwarts: {
+        Headmaster:  HogwartsPeople.filter((caracter) => caracter
+          .headmasterOrMistress),
+        "activeTeachers": HogwartsPeople.filter((teachers) => teachers
+          .currentlyEmployed),
+        "otherTeachers": HogwartsPeople.filter((teachers) => !teachers
+          .currentlyEmployed),
+      },
+      filtered,
+    }
+    return (
+      <context.Provider value ={ contextValue }>
+        <div className="app">
+          <img src={ crests } alt="Schools Crests" className="image"/>
+          <header>
+            <h1 className="main-title">
+              Professors and staff members of the Wizarding Schools
+            </h1>
+          </header>
+          <Durmstrang />
+          <Beauxbatons />
+          <Hogwarts />
+        </div>
+      </context.Provider>
+    );
+  }
 }
 
 export default App;
