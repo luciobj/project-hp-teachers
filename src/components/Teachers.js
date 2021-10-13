@@ -3,12 +3,21 @@ import PropTypes from 'prop-types';
 import ProfessorCard from './ProfessorCard';
 
 function Hogwarts(props) {
-  const { data } = props;
+  const { activeTeachers, otherTeachers  } = props;
   return (
     <div>
-      { data.filter((caracter) => caracter.schoolafiliation === "Hogwarts").map((professor) => 
-        <ProfessorCard data={ professor } />
-      ) }
+      <div className="teacher-container">
+        <h5>Active Teachers</h5>
+        { activeTeachers.map((teacher) => (
+          <ProfessorCard key={ teacher.name } teacher={ teacher } />
+        )) }
+      </div>
+      <div className="teacher-container">
+        <h5>Other Teachers</h5>
+        { otherTeachers.map((teacher) => (
+          <ProfessorCard key={ teacher.name } teacher={ teacher } />
+        )) }
+      </div>
     </div>
   );
 }
@@ -16,5 +25,6 @@ function Hogwarts(props) {
 export default Hogwarts;
 
 Hogwarts.propTypes = {
-  data: PropTypes.objectOf().isRequired,
+  activeTeachers: PropTypes.objectOf().isRequired,
+  otherTeachers: PropTypes.objectOf().isRequired,
 }

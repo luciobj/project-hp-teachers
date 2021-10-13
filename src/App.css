@@ -31,3 +31,18 @@
   top: 0;
   z-index: -1;
 }
+
+.teacher-container{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90vw;
+}
+
+.schools-container {
+  display: flex;
+  justify-content: center;
+}
+
+.professor-card {
+  min-width: 300px;
+}

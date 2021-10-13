@@ -29,10 +29,10 @@ class App extends Component {
       Durmstrang: DurmstrangPeople,
       Beauxbatons: BeauxbatonsPeople,
       Hogwarts: {
-        Headmaster:  HogwartsPeople.filter((caracter) => caracter
-          .headmasterOrMistress),
+        Headmaster: HogwartsPeople.filter((caracter) => caracter
+          .headmasterOrMistress)[0],
         "activeTeachers": HogwartsPeople.filter((teachers) => teachers
-          .currentlyEmployed),
+          .currentlyEmployed && !teachers.headmasterOrMistress),
         "otherTeachers": HogwartsPeople.filter((teachers) => !teachers
           .currentlyEmployed),
       },
@@ -47,9 +47,11 @@ class App extends Component {
               Professors and staff members of the Wizarding Schools
             </h1>
           </header>
-          <Durmstrang />
-          <Beauxbatons />
-          <Hogwarts />
+          <div className="schools-container">
+            <Beauxbatons />
+            <Hogwarts />
+            <Durmstrang />
+          </div>
         </div>
       </context.Provider>
     );

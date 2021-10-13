@@ -5,8 +5,8 @@ function ProfessorCard(props) {
   const { teacher } = props;
   const { name, image, subject } = teacher;
   return (
-    <div>
-      <img src={ image } alt="Professor" />
+    <div className="professor-card">
+      <img src={ image } alt="Professor" width="50px" height="50px" />
       <p>{ name }</p>
       <p>{ `Subject: ${subject}` }</p>
     </div>
