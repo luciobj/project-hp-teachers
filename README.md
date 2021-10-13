@@ -59,3 +59,7 @@ Faça um card distinto para diretores, onde cada um deverá ter o nome, imagem, 
 #### Exercício 4
 
 No componente Teachers, separe os professores entre aqueles ativamente ensinando, e aqueles que não estão mais em hogwarts.
+
+#### Exercício Extra
+
+Ordene os professores por ordem alfabetica.
