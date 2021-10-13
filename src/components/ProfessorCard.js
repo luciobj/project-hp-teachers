@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ProfessorCard(props) {
-  const { data } = props;
+  const { teacher } = props;
+  const { name, image, subject } = teacher;
   return (
     <div>
-      <h4>{ data.name }</h4>
+      <img src={ image } alt="Professor" />
+      <p>{ name }</p>
+      <p>{ `Subject: ${subject}` }</p>
     </div>
   )
 }
@@ -13,5 +16,5 @@ function ProfessorCard(props) {
 export default ProfessorCard;
 
 ProfessorCard.propTypes = {
-  data: PropTypes.objectOf().isRequired,
+  teacher: PropTypes.objectOf().isRequired,
 }

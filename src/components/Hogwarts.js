@@ -13,11 +13,15 @@ function Hogwarts() {
           <Headmastermistress caracter={ Headmaster } />
           <div>
             <h5>Active Teachers</h5>
-            <Teachers data={ activeTeachers } />
+            { activeTeachers.map((teacher) => (
+              <Teachers caracter={ teacher } />
+            )) }
           </div>
           <div>
             <h5>Other Teachers</h5>
-            <Teachers data={ otherTeachers } />
+            { otherTeachers.map((teacher) => (
+              <Teachers caracter={ teacher } />
+            )) }
           </div>
         </div>
       }) }
