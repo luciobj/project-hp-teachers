@@ -8,6 +8,7 @@ function Teachers(props) {
     <div>
       <div className="teacher-container">
         <h5>Active Teachers</h5>
+        {/* Sort reference: https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript*/}
         { activeTeachers
           .sort((caracter, nextCaracter) => caracter.name > nextCaracter.name)
             .map((teacher) => (
