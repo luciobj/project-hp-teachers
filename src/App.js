@@ -13,9 +13,9 @@ function App() {
       <header>
         <h1 className="main-title">Professors and staff members of the Wizarding Schools</h1>
       </header>
-        <Durmstrang data={ data } />
-        <Beauxbatons data={ data } />
-        <Hogwarts data={ data } />
+      <Durmstrang data={ data } />
+      <Beauxbatons data={ data } />
+      <Hogwarts data={ data } />
     </div>
   );
 }

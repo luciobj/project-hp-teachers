@@ -8,21 +8,11 @@ Após feito o fork, clone o repositório criado para o seu computador.
 
 Rode o `npm install`.
 
-Vá para a branch master do seu projeto e execute o comando:
-- `git branch`
-
-Verifique se as seguintes branchs apareceram:
-
-  `exercise-one`
-  `exercise-two`
-  `exercise-three`
-
-- Cada branch dessas será um exercício.
-- Mude para a branch `exercise-one` com o comando `git checkout exercise-one`. É nessa branch que você realizará a solução para o exercício 1, e assim por diante.
-
-Observe o que deve ser feito nas instruções para cada exercício.
-
+Vá para a branch master do seu projeto e crie uma nova com o seu nome:
+- `git checkout -b jaiminho-project-hp-teachers`
 Após a solução dos exercícios, abra um PR no seu repositório forkado e, se quiser, mergeie para a master, sinta-se a vontade!
+
+Caso fique travado ou tenha alguma dúvida, acesse a branch `gabarito` e veja como foi feita a resolução.
 
 **Atenção!** Quando for criar o PR você irá se deparar com essa tela:
 
@@ -49,15 +39,23 @@ Para corrigir essa situação, realize os exercicios e aplique seus conhecimento
 #### Exercício 1
 
 Aplique o _Context API_ para que a informação não precise passar por todos os componentes.
+  - Crie uma pasta com o nome "context";
+  - Crie nela um arquivo chamado "Provider.js";
+  - Crie nela um arquivo chamado "Context.js";
+  - Configure o createContext dentro do Context.js;
+  - Configure o Provider com o context criado, e passe como value a informação do arquivo data;
+  - Refatore o código para eliminar o _prop drilling_:
+    - Chame o provider dentro do index e englobando o App como filho;
+    - Recupere o valor de seu context somente nos componentes que ele for ser utilizado;
 
 #### Exercício 2
 
-Agora que você tem sua informação no estado global, faça um card distinto para diretores, onde cada um deverá ter o nome, imagem, e magia assinatura.
+Agora que você tem sua informação no estado global, faça com que os professores tenham seu nome, imagem, e matéria ensinada em seus cards.
 
 #### Exercício 3
 
-Faça com que os professores tenham seu nome, imagem, e matéria ensinada em seus cards.
+Faça um card distinto para diretores, onde cada um deverá ter o nome, imagem, e magia assinatura.
 
-### Exercício 4
+#### Exercício 4
 
-No componente Staff, separe os professores entre aqueles ativamente ensinando, e aqueles que não estão mais em hogwarts.
+No componente Teachers, separe os professores entre aqueles ativamente ensinando, e aqueles que não estão mais em hogwarts.
